@@ -20,11 +20,11 @@ bsc_link_args = [
 ]
 
 # on macos/darwin, don't static link
-if host_machine.system() == 'darwin'
+if target_machine.system() == 'darwin'
   bsc_link_args = []
 endif
 
-bsc_exe_name = 'bsc' + '_' + host_machine.system() + '_' + host_machine.cpu()
+bsc_exe_name = 'bsc' + '_' + target_machine.system() + '_' + target_machine.cpu()
 
 bsc_exe = executable(
   bsc_exe_name,
