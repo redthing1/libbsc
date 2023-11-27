@@ -4,13 +4,13 @@ cpp = 'riscv64-linux-gnu-g++'
 ar = 'riscv64-linux-gnu-ar'
 strip = 'riscv64-linux-gnu-strip'
 
-[host_machine]
+[build_machine]
 system = 'linux'
 cpu_family = 'x86_64'
 cpu = 'x86_64'
 endian = 'little'
 
-[target_machine]
+[host_machine]
 system = 'linux'
 cpu_family = 'riscv64'
 cpu = 'riscv64'
