@@ -32,3 +32,17 @@ bsc_exe = executable(
   dependencies : [libbsc_dep],
   link_args: bsc_link_args,
 )
+
+libbsc_m03_dep = libbsc_proj.get_variable('libbsc_m03_dep')
+bsc_m03_sources = [
+  'bsc-m03.cpp',
+]
+
+bsc_m03_exe_name = 'bsc-m03' + '_' + target_machine.system() + '_' + target_machine.cpu()
+
+bsc_m03_exe = executable(
+  bsc_m03_exe_name,
+  bsc_m03_sources,
+  dependencies : [libbsc_m03_dep],
+  link_args: bsc_link_args,
+)

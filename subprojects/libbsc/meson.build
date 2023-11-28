@@ -40,3 +40,25 @@ libbsc_dep = declare_dependency(
   include_directories: libbsc_include,
   link_with : libbsc_stlib,
 )
+
+libbsc_m03_include = include_directories('./libbsc_m03')
+
+libbsc_m03_sources = [
+  # hutucker/hu-tucker.c libsais/libsais.c libsais/libsais16.c
+  'libbsc_m03/hutucker/hu-tucker.c',
+  'libbsc_m03/libsais/libsais.c',
+  'libbsc_m03/libsais/libsais16.c',
+]
+
+libbsc_m03_stlib = static_library('libbsc_m03',
+  libbsc_m03_sources,
+  include_directories: libbsc_m03_include,
+  c_args: ['-DBUILDING_libbsc_m03'],
+  gnu_symbol_visibility: 'default',
+  link_args: libbsc_lflags,
+)
+
+libbsc_m03_dep = declare_dependency(
+  include_directories: libbsc_m03_include,
+  link_with : libbsc_m03_stlib,
+)
